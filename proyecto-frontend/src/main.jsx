@@ -5,6 +5,7 @@ import './layout.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Layout />
+    <Layout>
+    </Layout>
   </StrictMode>,
 )
