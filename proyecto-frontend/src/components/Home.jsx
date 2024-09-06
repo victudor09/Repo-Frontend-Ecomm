@@ -1,10 +1,16 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import { useContext, useEffect } from 'react'
+import { Product } from '../context/ProductContext'
 import '../css/home.css'
 
 const Home = () => {
+    const { categorie, getCategorie } = useContext(Product)
+
+    useEffect(() => {
+        getCategorie()
+    }, [])
     return (
     <>
+    <h4>{categorie.nameCategorie}</h4>
 
     <section className="Hero">
         <h1>Bienvenido a Nuestro eCommerce</h1>
