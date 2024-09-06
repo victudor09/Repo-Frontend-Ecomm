@@ -1,6 +1,6 @@
 export const ACTIONS = {
-  LOGIN: 'LOGIN',
-  GET_CATEGORIE: 'GET_CATEGORIE'
+  LOGIN: 'login',
+  GET_CATEGORIE: 'get-categorie'
 }
 
 export function reducer (state, actions) {
