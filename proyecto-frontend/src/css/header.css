@@ -1,0 +1,80 @@
+/* Estilo general del Header */
+.Header {
+    background-color: #007bff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Estilo del título del Header */
+.Header > span {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    align-self: flex-start; /* Alinea el título a la parte superior izquierda */
+}
+
+/* Contenedor de los enlaces de navegación */
+.Header > div {
+    display: flex;
+    gap: 20px;
+}
+
+/* Estilo de los enlaces */
+.Header a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+/* Efecto hover en los enlaces */
+.Header a:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para el enlace activo o actualmente seleccionado */
+.Header a.active {
+    background-color: #0056b3;
+}
+
+/* Estilo responsive: Pantallas más pequeñas */
+@media (max-width: 768px) {
+    /* Ajusta la estructura del Header para que se apile verticalmente */
+    .Header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    /* Ajusta el tamaño del título */
+    .Header > span {
+        font-size: 20px;
+        margin-bottom: 10px;
+        align-self: flex-start; /* Mantiene el título alineado a la izquierda */
+    }
+
+    /* Los enlaces de navegación se apilan verticalmente con menos espacio entre ellos */
+    .Header > div {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    /* Centra los enlaces en el Header */
+    .Header a {
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+        padding: 10px;
+    }
+}
