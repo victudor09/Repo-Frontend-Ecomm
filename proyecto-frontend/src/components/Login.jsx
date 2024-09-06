@@ -1,8 +1,10 @@
-import React, {useState} from 'react'
+import { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { User } from '../context/UserContext'
 
 
 const Login = () => {
+    const { loginUser } = useContext(User)
     const navigate = useNavigate()
 
     const [data, setData] = useState({
@@ -26,16 +28,12 @@ const Login = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        console.log(`sending data… ${data.email} ${data.password}`)
+        loginUser({...data})
         clearState()
         setTimeout(() => {
             navigate('/profile')
         }, 1000)
     }
-
-
-    const [message, setMessage] = useState('')
-
 
     return (
     <>
@@ -49,14 +47,13 @@ const Login = () => {
         name="email"
     />
     <input
-        type="text"
+        type="password"
         placeholder="password"
         value={data.password}
         onChange={handleInputChange}
-        name="name"
+        name="password"
     />
-    <button type="submit"> Login </button>
-    <p>{message}</p>
+    <button type="submit">Login</button>
     </form>
     </>
     )
