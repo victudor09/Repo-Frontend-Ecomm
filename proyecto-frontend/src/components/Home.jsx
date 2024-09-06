@@ -1,8 +1,10 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import { useContext } from 'react'
 import '../css/home.css'
+import { Product } from '../context/ProductContext'
 
 const Home = () => {
+    const {} = useContext(Product)
+
     return (
     <>
 
