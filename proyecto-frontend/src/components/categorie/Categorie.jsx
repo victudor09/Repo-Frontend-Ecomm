@@ -1,12 +1,12 @@
 import { useContext } from 'react'
-import { Product } from '../context/ProductContext'
+import { Product } from '../../context/ProductContext'
 
 export default function Categorie () {
   const { categorie } = useContext(Product)
 
   return (
     <>
-      <h4>{categorie.title}</h4>
+      <h4>{categorie.nameCategorie}</h4>
     </>
   )
 }
