@@ -5,16 +5,15 @@ import { reducer, ACTIONS } from '../utils/actions-reducer.js'
 export const Product = createContext()
 
 export function ProductContext ({ children }) {
-  const initialState = { product: {} }
+  const initialStateProduct = { product: [] }
   const BASE_URL = 'http://localhost:3000'
 
-  const [ state, dispatch ] = useReducer(reducer, initialState)
+  const [ state, dispatch ] = useReducer(reducer, initialStateProduct)
 
   const getCategorie = async () => {
     try {
       const response = await axios.get(`${BASE_URL}/categoria/`)
-      console.log(`Petición: ${response.data}`)
-      dispatch({ type: ACTIONS.LOGIN, payload: response.data })
+      dispatch({ type: ACTIONS.GET_CATEGORIE, payload: response.data })
     } catch (error) {
       console.error(error)
     }
