@@ -10,10 +10,10 @@ export function ProductContext ({ children }) {
 
   const [ state, dispatch ] = useReducer(reducer, initialState)
 
-  const getCategorie = () => {
+  const getCategorie = async () => {
     try {
-      const response = axios.get(`${BASE_URL}/categoria/`)
-      console.log(response.data)
+      const response = await axios.get(`${BASE_URL}/categoria/`)
+      console.log(`Petición: ${response.data}`)
       dispatch({ type: ACTIONS.LOGIN, payload: response.data })
     } catch (error) {
       console.error(error)
