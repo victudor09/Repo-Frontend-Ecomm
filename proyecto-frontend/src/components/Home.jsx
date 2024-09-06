@@ -1,16 +1,9 @@
-import { useContext, useEffect } from 'react'
-import { Product } from '../context/ProductContext'
 import '../css/home.css'
+import Categorie from './categorie/Categorie'
 
 const Home = () => {
-    const { categorie, getCategorie } = useContext(Product)
-
-    useEffect(() => {
-        getCategorie()
-    }, [])
     return (
     <>
-    <h4>{categorie.nameCategorie}</h4>
 
     <section className="Hero">
         <h1>Bienvenido a Nuestro eCommerce</h1>
@@ -18,15 +11,7 @@ const Home = () => {
         <button>Comprar Ahora</button>
     </section>
 
-    <section className="Categories">
-        <h2>Categorías Populares</h2>
-        <div className="category-list">
-            <div className="category-item">Ropa</div>
-            <div className="category-item">Electrónica</div>
-            <div className="category-item">Hogar</div>
-            <div className="category-item">Deportes</div>
-        </div>
-    </section>
+    <Categorie />
 
     <section className="Featured">
         <h2>Productos Destacados</h2>
