@@ -1,14 +1,25 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
+import { User } from '../context/UserContext'
 
 const Profile = () => {
+/* AÑADIR UTILIZANDO CONTEXT PAG 132 */
+    const { user, getUser } = useContext(User)
+    useEffect(() => {
+        getUser()
+        }, [])
+
   return (
     <>
    
     <section className="Profile">
         <h1>Profile</h1>
         
+        <p>Bienvenid@ {user.name} </p>
+
         <div className="profile-info">
             <h2>Información Personal</h2>
+            {user.map(user => (
+                <div key={user.id} className=""><p>{user.name}</p></div>))}
             <p><strong>Nombre:</strong> Juan Pérez</p>
             <p><strong>Email:</strong> juan.perez@example.com</p>
             <p><strong>Teléfono:</strong> +34 600 123 456</p>

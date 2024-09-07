@@ -30,9 +30,18 @@ export function UserContext ({ children }) {
       console.log(error)
     }
   }
+/* PARA DESPACHAR DATOS DE USUARIO LOGEADO PRUEBO CON ESTO: */
+  const getUser = async () => {
+    try {
+      const response = await axios.get(`${BASE_URL}/usuario/getAll`)
+      dispatch({ type: ACTIONS.GET_USER, payload: response.data })
+    } catch (error) {
+      console.error(error)
+    }
+  }
 
   return (
-    <User.Provider value={{ user: state.user, token: state.token, createUser, loginUser }}>
+    <User.Provider value={{ user: state.user, token: state.token, createUser, loginUser, getUser }}>
       {children}
     </User.Provider>
   )
