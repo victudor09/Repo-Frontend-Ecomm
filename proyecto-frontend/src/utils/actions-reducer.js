@@ -27,7 +27,7 @@ export function reducer (state, actions) {
     case ACTIONS.GET_USER:
       return {
         ...state,
-        product: actions.payload
+        user: actions.payload
     }
     default:
       return state

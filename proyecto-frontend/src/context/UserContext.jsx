@@ -24,16 +24,21 @@ export function UserContext ({ children }) {
     try {
       const response = await axios.post(`${BASE_URL}/usuario/login`, loginUser)
       dispatch({ type: ACTIONS.LOGIN_USER, payload: response.data })
-
+      console.log('entra');
+      
       if (response.data) return localStorage.setItem('token', JSON.stringify(response.data.token))
     } catch (error) {
       console.log(error)
     }
   }
 /* PARA DESPACHAR DATOS DE USUARIO LOGEADO PRUEBO CON ESTO: */
-  const getUser = async () => {
+  const getUser = async (getUser) => {
     try {
-      const response = await axios.get(`${BASE_URL}/usuario/getAll`)
+      console.log(token);
+      
+      const response = await axios.get(`${BASE_URL}/usuario/getAll`, {headers: {Authorization: `${token}`}}, getUser)
+      console.log(response.data);
+      
       dispatch({ type: ACTIONS.GET_USER, payload: response.data })
     } catch (error) {
       console.error(error)
