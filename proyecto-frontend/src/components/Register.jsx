@@ -1,14 +1,17 @@
-import {useState} from 'react'
+import { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { User } from '../context/UserContext'
 import '../css/register.css'
 
 export const Register = () => {   
+    const { createUser } = useContext(User)
     const navigate = useNavigate()
 
     const [data, setData] = useState({
         name: '',
         email: '',
         password: '',
+        role: 'user'
     })
 
     const initialState = {
@@ -35,7 +38,7 @@ export const Register = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        console.log(`sending data… ${data.name} ${data.email}`)
+        createUser({...data})
         clearState()
         setTimeout(() => {
             navigate('/')
@@ -45,7 +48,6 @@ export const Register = () => {
 
     const [btnDisabled, setBtnDisabled] = useState(true)
     const [message, setMessage] = useState('')
-
 
     return (
     <>
@@ -68,7 +70,7 @@ export const Register = () => {
     <input
         type="password"
         placeholder="password"
-        value={data.email}
+        value={data.password}
         onChange={handleInputChange}
         name="password"
     />
