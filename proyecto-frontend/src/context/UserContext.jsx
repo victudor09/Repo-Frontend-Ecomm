@@ -31,6 +31,20 @@ export function UserContext ({ children }) {
       console.log(error)
     }
   }
+
+  const logout = async () => {
+    try {
+      console.log(token)
+      const response = await axios.delete(`${BASE_URL}/usuario/logout`, {
+        headers: { authorization: token }
+      })
+      dispatch({ type: ACTIONS.LOGOUT, payload: response.data })
+      if (response.data) return localStorage.removeItem('token')
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
 /* PARA DESPACHAR DATOS DE USUARIO LOGEADO PRUEBO CON ESTO: */
   const getUser = async (getUser) => {
     try {
@@ -46,7 +60,7 @@ export function UserContext ({ children }) {
   }
 
   return (
-    <User.Provider value={{ user: state.user, token: state.token, createUser, loginUser, getUser }}>
+    <User.Provider value={{ user: state.user, token: state.token, createUser, loginUser, logout, getUser }}>
       {children}
     </User.Provider>
   )
