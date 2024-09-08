@@ -1,24 +1,26 @@
 import {Link} from 'react-router-dom'
 /* import '../css/header.css' */
 import '../App.scss'
+import ButtomLogout from './ButtomLogout'
 
 const Header = () => {
   return (
     <nav className='Header'>
-      <div>
-        <span>
+      <ul>
+        <li>
           <Link to="/">Home</Link>
-        </span>
-        <span>
+        </li>
+        <li>
           <Link to="/login">Login</Link>
-        </span>
-        <span>
+        </li>
+        <li>
           <Link to="/register">Register</Link>
-        </span>
-        <span>
+        </li>
+        <li>
           <Link to="/profile">Profile</Link>
-        </span>
-      </div>
+        </li>
+      </ul>
+      <ButtomLogout />
     </nav>
   )
 }
