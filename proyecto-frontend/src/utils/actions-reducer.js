@@ -1,6 +1,7 @@
 export const ACTIONS = {
   CREATE_USER: 'create',
   LOGIN_USER: 'login-user',
+  LOGOUT: 'logout',
   GET_CATEGORIE: 'get-categorie',
   GET_USER: 'get-user'
 }
@@ -16,6 +17,11 @@ export function reducer (state, actions) {
       return {
         ...state,
         user: actions.payload.token
+      }
+    case ACTIONS.LOGOUT:
+      return {
+        ...state,
+        user: actions.payload
       }
     case ACTIONS.GET_CATEGORIE:
       return {
