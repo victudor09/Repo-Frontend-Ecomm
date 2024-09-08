@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import '../App.scss'
 import ButtomLogout from './ButtomLogout'
 
-const Header = () => {
+function Header ()  {
   return (
     <nav className='Header'>
       <ul>
