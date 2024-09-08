@@ -1,3 +1,5 @@
+@import '../src/css/header.scss';
+
 // Variables de colores
 $primary-color: #007bff;
 $secondary-color: #0056b3;
@@ -40,7 +42,7 @@ main {
 
 // Estilo del Header
 .Header {
-  background-color: $primary-color;
+  background-color: #007bff;
   padding: 15px 30px;
   display: flex;
   justify-content: space-between;
@@ -52,16 +54,23 @@ main {
   width: 100%;
   z-index: 1000;
 
-  & > span {
+  & ul {
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+      align-self: flex-start;
+  }
+
+  & ul li{
     font-size: 24px;
     font-weight: bold;
     color: $text-light-color;
     align-self: flex-start;
-  }
-
-  & > div {
-    display: flex;
-    gap: 20px;
   }
 
   a {
