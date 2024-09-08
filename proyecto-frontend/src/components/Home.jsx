@@ -1,5 +1,6 @@
 import '../css/home.css'
 import Categorie from './categorie/Categorie'
+import '../App.scss'
 
 const Home = () => {
     return (

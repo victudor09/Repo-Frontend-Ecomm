@@ -1,5 +1,6 @@
-import React, { useContext, useEffect } from 'react'
+import  { useContext, useEffect } from 'react'
 import { User } from '../context/UserContext'
+import '../App.scss'
 
 const Profile = () => {
 /* AÑADIR UTILIZANDO CONTEXT PAG 132 */
@@ -12,7 +13,7 @@ const Profile = () => {
 
   return (
     <>
-   
+   <div className='centered-container'>
     <section className="Profile">
         <h1>Profile</h1>
         
@@ -57,6 +58,7 @@ const Profile = () => {
         }
         </div>
     </section>
+    </div>
     </>
   )
 }

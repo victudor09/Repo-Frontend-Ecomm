@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { User } from '../context/UserContext'
-
+import '../App.scss'
 
 const Login = () => {
     const { loginUser } = useContext(User)
@@ -37,7 +37,9 @@ const Login = () => {
 
     return (
     <>
-    <h2>Login</h2>
+    
+    <h2> Login </h2>
+    <div className='centered-container'>
     <form onSubmit={handleSubmit}>
     <input
         type="email"
@@ -55,6 +57,9 @@ const Login = () => {
     />
     <button type="submit">Login</button>
     </form>
+
+    </div>
+    
     </>
     )
 }

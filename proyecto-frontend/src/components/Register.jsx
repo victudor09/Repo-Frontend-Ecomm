@@ -1,7 +1,8 @@
 import { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { User } from '../context/UserContext'
-import '../css/register.css'
+/* import '../css/register.css' */
+import '../App.scss'
 
 export const Register = () => {   
     const { createUser } = useContext(User)
@@ -52,6 +53,7 @@ export const Register = () => {
     return (
     <>
     <h2>Register</h2>
+    <div className='centered-container'>
     <form onSubmit={handleSubmit}>
     <input
         type="text"
@@ -77,6 +79,8 @@ export const Register = () => {
     <button type="submit" disabled={btnDisabled}>Enviar</button>
     <p>{message}</p>
     </form>
+    </div>
+    
     </>
     )
 }

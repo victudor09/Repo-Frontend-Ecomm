@@ -4,6 +4,7 @@ import Header from './components/Header'
 import Register from './components/Register'
 import Login from './components/Login'
 import Profile from './components/Profile'
+import Footer from './components/Footer'
 
 
 function App() {
@@ -18,7 +19,11 @@ function App() {
                     <Route path='/login' element={<Login />}/>
                     <Route path='/profile' element={<Profile />}/>
                     <Route />
+                    <Route />
+                    <Route />
+                    <Route />
                 </Routes>
+                <Footer />
             </BrowserRouter>
         </div>
     )

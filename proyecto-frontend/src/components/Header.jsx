@@ -1,5 +1,6 @@
 import {Link} from 'react-router-dom'
-import '../css/header.css'
+/* import '../css/header.css' */
+import '../App.scss'
 
 const Header = () => {
   return (
