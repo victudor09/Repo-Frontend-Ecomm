@@ -1,9 +1,13 @@
+import { useCallback, useContext } from 'react'
+import { User } from '../context/UserContext'
 import {Link} from 'react-router-dom'
+import ButtomLogout from './ButtomLogout'
 /* import '../css/header.css' */
 import '../App.scss'
-import ButtomLogout from './ButtomLogout'
 
 function Header ()  {
+  const { user } = useContext(User)
+
   return (
     <nav className='Header'>
       <ul>
@@ -16,9 +20,12 @@ function Header ()  {
         <li>
           <Link to="/register">Register</Link>
         </li>
-        <li>
-          <Link to="/profile">Profile</Link>
-        </li>
+        {
+          user && (
+          <li>
+            <Link to="/profile">{user.name}</Link>
+          </li>)
+        }
       </ul>
       <ButtomLogout />
     </nav>
