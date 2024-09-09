@@ -4,7 +4,8 @@ export const ACTIONS = {
   LOGOUT: 'logout',
   GET_CATEGORIE: 'get-categorie',
   GET_USER: 'get-user',
-  GET_PRODUCT: 'get-product'
+  GET_PRODUCT: 'get-product',
+  GET_ID_PRODUCT: 'get-id-product'
 }
 
 export function reducer (state, actions) {
@@ -31,7 +32,12 @@ export function reducer (state, actions) {
         ...state,
         product: actions.payload
       }
+    case ACTIONS.GET_ID_PRODUCT:
+      return {
+        ...state,
+        cart: [...state.cart, actions.payload],
 
+      }
     /* AÑADO */
     case ACTIONS.GET_USER:
       return {
