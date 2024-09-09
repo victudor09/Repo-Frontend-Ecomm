@@ -9,7 +9,7 @@ const Profile = () => {
         getUser()
         }, [])
 
-    const pedidos = user.Pedidos
+    const pedidos = user?.Pedido
 
   return (
     <>
@@ -17,13 +17,13 @@ const Profile = () => {
     <section className="Profile">
         <h1>Profile</h1>
         
-        <p>Bienvenid@ {user.name} </p>
+        <p>Bienvenid@ {user?.name} </p>
 
         <div className="profile-info">
             <h2>Información Personal</h2>
             {/* Accediendo directamente a las propiedades del objeto user */}
-            <p><strong>Nombre:</strong> {user.name}</p>
-            <p><strong>Email:</strong> {user.email}</p>
+            <p><strong>Nombre:</strong> {user?.name}</p>
+            <p><strong>Email:</strong> {user?.email}</p>
             <button>Editar Información</button>
         </div>
         
@@ -53,7 +53,7 @@ const Profile = () => {
 
             {
             pedidos ? pedidos.map(pedido => (
-                <div key={pedido.id} className=""><li> Pedido Nº: {pedido.id}</li></div>
+                <div key={pedido?.id} className=""><li> Pedido Nº: {pedido?.id}</li></div>
             )) : <p>No hay pedido</p>
         }
         </div>

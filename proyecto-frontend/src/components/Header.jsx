@@ -20,7 +20,7 @@ function Header ()  {
           (
           <>
             <li>
-              <Link to="/profile">{user.name || 'Nombre de Usuario'}</Link>
+              <Link to="/profile">{user?.name || 'Nombre de Usuario'}</Link>
             </li>
             <li>
               <ButtomLogout />
