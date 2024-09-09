@@ -52,9 +52,10 @@ export const Register = () => {
 
     return (
     <>
-    <h2>Register</h2>
+    
     <div className='centered-container'>
     <form onSubmit={handleSubmit}>
+    <h2>Register</h2>
     <input
         type="text"
         placeholder="name"
