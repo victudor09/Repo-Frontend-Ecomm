@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext, useEffect } from 'react'
 import { User } from '../context/UserContext'
 import {Link} from 'react-router-dom'
 import ButtomLogout from './ButtomLogout'
@@ -6,9 +6,12 @@ import ButtomLogout from './ButtomLogout'
 import '../App.scss'
 
 function Header ()  {
-  const { user, token } = useContext(User)
-         
-  console.log('Estado de token',token)
+  const { user, token, getUser } = useContext(User)
+
+  useEffect(() => {
+    getUser()
+  }, [])
+
   return (
     <nav className='Header'>
       <ul>
@@ -25,6 +28,9 @@ function Header ()  {
             <li>
               <Link to="/profile">{user?.name || 'Nombre de Usuario'}</Link>
             </li>
+            <li>
+              <Link to="/cart">Cart</Link>
+             </li>
             <li>
               <ButtomLogout />
              </li>
