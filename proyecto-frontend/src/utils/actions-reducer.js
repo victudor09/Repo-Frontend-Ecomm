@@ -2,7 +2,8 @@ export const ACTIONS = {
   CREATE_USER: 'create',
   LOGIN_USER: 'login-user',
   GET_CATEGORIE: 'get-categorie',
-  GET_USER: 'get-user'
+  GET_USER: 'get-user',
+  GET_PRODUCT: 'get-product'
 }
 
 export function reducer (state, actions) {
@@ -23,12 +24,19 @@ export function reducer (state, actions) {
         product: actions.payload
       }
 
-    /* AÑADO (VICTOR) */
+    /* AÑADO */
     case ACTIONS.GET_USER:
       return {
         ...state,
         user: actions.payload
     }
+
+    case ACTIONS.GET_PRODUCT:
+      return {
+        ...state,
+        products: actions.payload
+    }
+
     default:
       return state
   }

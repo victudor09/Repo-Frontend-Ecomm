@@ -38,9 +38,10 @@ const Login = () => {
     return (
     <>
     
-    <h2> Login </h2>
+    
     <div className='centered-container'>
     <form onSubmit={handleSubmit}>
+    <h2> Login </h2>
     <input
         type="email"
         placeholder="email"

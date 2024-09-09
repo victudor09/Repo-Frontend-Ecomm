@@ -13,7 +13,7 @@ export default function Categorie () {
         <h2>Categorías Populares</h2>
         {
             categorie ? categorie.map(categorie => (
-                <div key={categorie.id} className="category-item"><p>{categorie.nameCategorie}</p></div>
+                <div key={categorie.id} className="category-item"><h3>{categorie.nameCategorie}</h3></div>
             )) : <p>No hay categoria</p>
         }
     </section>
