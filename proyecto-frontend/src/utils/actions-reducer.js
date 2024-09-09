@@ -16,12 +16,14 @@ export function reducer (state, actions) {
     case ACTIONS.LOGIN_USER:
       return {
         ...state,
-        user: actions.payload.token
+        user: actions.payload,
+        token: actions.payload.token
       }
     case ACTIONS.LOGOUT:
       return {
         ...state,
-        user: actions.payload
+        user: null,
+        token: null
       }
     case ACTIONS.GET_CATEGORIE:
       return {
