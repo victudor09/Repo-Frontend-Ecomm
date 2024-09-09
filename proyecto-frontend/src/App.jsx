@@ -6,6 +6,7 @@ import Login from './components/Login'
 import Profile from './components/Profile'
 import Footer from './components/Footer'
 import Products from './components/Products'
+import Cart from './components/Cart'
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
                     <Route path='/login' element={<Login />}/>
                     <Route path='/profile' element={<Profile />}/>
                     <Route path='/products' element={<Products />}/>
-                    <Route />
+                    <Route path='/cart' element={<Cart />}/>
                     <Route />
                     <Route />
                 </Routes>
