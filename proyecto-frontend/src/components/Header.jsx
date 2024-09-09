@@ -1,27 +1,41 @@
+import { useContext, useState } from 'react'
+import { User } from '../context/UserContext'
 import {Link} from 'react-router-dom'
+import ButtomLogout from './ButtomLogout'
 /* import '../css/header.css' */
 import '../App.scss'
 
-const Header = () => {
+function Header ()  {
+  const { user, token } = useContext(User)
+         
+  console.log('Estado de token',token)
   return (
     <nav className='Header'>
-      <div>
-        <span>
+      <ul>
+        <li>
           <Link to="/">Home</Link>
-        </span>
-        <span>
-          <Link to="/login">Login</Link>
-        </span>
-        <span>
-          <Link to="/register">Register</Link>
-        </span>
-        <span>
-          <Link to="/profile">Profile</Link>
-        </span>
-        <span>
-          <Link to="/products">Products</Link>
-        </span>
-      </div>
+        </li>
+        {
+          token ? 
+          (
+          <>
+            <li>
+              <Link to="/profile">{user.name || 'Nombre de Usuario'}</Link>
+            </li>
+            <li>
+              <ButtomLogout />
+             </li>
+          </>) : 
+          (<>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+            <li>
+              <Link to="/register">Register</Link>
+            </li>
+          </>)
+        }
+      </ul>
     </nav>
   )
 }
